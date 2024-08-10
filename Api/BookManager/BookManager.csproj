@@ -26,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BooksService\BooksService.csproj" />
-    <ProjectReference Include="..\DomainModels\DomainModels.csproj" />
+    <ProjectReference Include="..\..\Services\BooksService\BooksService.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\DomainModels\DomainModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>

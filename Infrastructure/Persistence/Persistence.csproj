@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConfigurationDataProviderService\ConfigurationDataProvider.csproj" />
-    <ProjectReference Include="..\DomainModels\DomainModels.csproj" />
+    <ProjectReference Include="..\..\Configuration\ConfigurationDataProvider\ConfigurationDataProvider.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\DomainModels\DomainModels.csproj" />
   </ItemGroup>
 
 </Project>
