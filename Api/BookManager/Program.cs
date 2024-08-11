@@ -9,11 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:3000");
-        });
+    options.AddPolicy("AllowOrigin", x => x.AllowAnyOrigin());
 });
 
 builder.Services.AddControllers();
@@ -62,6 +58,8 @@ if (app.Environment.IsDevelopment())
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
         options.RoutePrefix = string.Empty;
     });
+
+    app.UseCors(b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 }
 
 app.UseHttpsRedirection();
@@ -69,8 +67,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseExceptionHandler();
-
-app.UseCors();
 
 app.UseAuthorization();
 

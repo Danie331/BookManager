@@ -27,15 +27,15 @@ const BookList = () => {
           <p>ISBN</p>
         </div>
         {list &&
-          list.map((item) => {
+          list.map((item, index) => {
             return (
         <div className=" pl-8 w-full flex mb-4">
           <div className=" w-1/2 flex justify-between mr-28 pr-10">
-            <h2>item.Id</h2>
-            <h2>item.author</h2>
-            <h2>item.title</h2>
-            <h2>item.publishedDate</h2>
-            <h2>item.isbn</h2>
+            <h2>{item.id}</h2>
+            <h2>{item.author}</h2>
+            <h2>{item.title}</h2>
+            <h2>{item.publishedDate}</h2>
+            <h2>{item.isbn}</h2>
           </div>
           <span>
             <button className=" bg-green-400 text-white px-3 py-1 rounded-sm mr-4">Edit record</button>

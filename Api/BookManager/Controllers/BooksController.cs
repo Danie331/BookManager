@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using Dto = BookManager.DtoModels;
 using Domain = DomainModels;
 using BookManager.CQRS.Commands.UseCases;
+using Microsoft.AspNetCore.Cors;
 
 namespace BookManager.Controllers
 {
+    [EnableCors("AllowOrigin")]
     [ApiController, Route("api/[controller]")]
     [Produces("application/json")]
     public class BooksController : ControllerBase
