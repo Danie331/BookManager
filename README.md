@@ -9,6 +9,20 @@ Maintain an inventory of books exposed via a RESTful API and swagger UI
 ### Data source
 - Flat file located in the web root by default
 - This repo currently ships with a sample books.json file containing random test data. To start from a clean slate, please delete this file and it will be automatically recreated.
+  
+### API usage notes
+- POST /api/Books
+  requires that you omit the "id" field from the payload (or leave null), this will be changed in future to accomodate its own DTO
+  eg.
+  ``` json
+  {
+    "id": "71a411fe-ddda-40e4-bbb3-871ee83c2dee" // omit or set to null
+    "title": "string",
+    "author": "string",
+    "publishedDate": "2024-08-11T11:27:19.250Z",
+    "isbn": "string"
+  }
+  ```
 
 ### Tests
 - NUnit test project located under UnitTests\Tests can be run directly from the project
@@ -20,6 +34,6 @@ Maintain an inventory of books exposed via a RESTful API and swagger UI
 - MediatR used for message dispatch via CQRS
 - FluentValidation to validate incoming DTOs
 - DI enabled by default framework classes
-- Separate configuration project added for confgurablity of data sources should this be diversified in future
+- Separate configuration project added for configurablity of data sources should this be diversified in future
 
 ### End
