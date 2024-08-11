@@ -17,15 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{6A9558C1-F315-4DFF-8CD6-C23635D2F79A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserInterface", "UserInterface", "{248960A7-53FD-4CDF-8D33-D5E23659701D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{25E8869E-FB40-486B-A663-EF8733B7C735}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigurationDataProvider", "Configuration\ConfigurationDataProvider\ConfigurationDataProvider.csproj", "{67A75A0A-36D2-4630-BE8D-7C13919A50E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{71C77B7E-6839-41EE-8D90-55F14F3558CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksService", "Services\BooksService\BooksService.csproj", "{26C0D7F0-CE56-471A-828B-9C3A1694A1B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksService", "Services\BooksService\BooksService.csproj", "{26C0D7F0-CE56-471A-828B-9C3A1694A1B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{7DC29B23-BE2F-4714-BEDD-A6DA8FF61C05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

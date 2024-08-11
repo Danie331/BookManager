@@ -21,7 +21,7 @@ namespace BookManager.Controllers
         }
 
         /// <summary>
-        /// Gets a list of all books
+        /// Gets a list of books as a paginated response
         /// </summary>
         /// <returns></returns>
         /// <response code="200">Successfully return list of books</response>
