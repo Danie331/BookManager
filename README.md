@@ -14,6 +14,7 @@ Maintain an inventory of books exposed via a RESTful API and swagger UI
 - POST /api/Books
   requires that you omit the "id" field from the payload (or leave null), this will be changed in future to accomodate its own DTO
   eg.
+  ``` json
   {
     "id": "71a411fe-ddda-40e4-bbb3-871ee83c2dee" // omit or set to null
     "title": "string",
@@ -21,6 +22,7 @@ Maintain an inventory of books exposed via a RESTful API and swagger UI
     "publishedDate": "2024-08-11T11:27:19.250Z",
     "isbn": "string"
   }
+  ```
 
 ### Tests
 - NUnit test project located under UnitTests\Tests can be run directly from the project
