@@ -7,7 +7,14 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000");
+        });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -27,12 +34,9 @@ builder.Services.AddSwaggerGen(options =>
 
 // Fluent validation
 builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-// Pipeline validation has been deprecated (since when?)
-//builder.Services.AddTransient(typeof (IPipelineBehavior< , >), typeof (ValidationPipelineBehaviour< , > ));
-builder.Services.AddMediatR(cf => cf.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
-// Validators
-//builder.Services.AddScoped<IValidator<AddBookCommand>, AddBookValidator>();
+// MediatR
+builder.Services.AddMediatR(cf => cf.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
 // Automapper
 builder.Services.AddAutoMapper(new Assembly[] { Assembly.GetAssembly(typeof(Program)) });
@@ -65,6 +69,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseExceptionHandler();
+
+app.UseCors();
 
 app.UseAuthorization();
 
