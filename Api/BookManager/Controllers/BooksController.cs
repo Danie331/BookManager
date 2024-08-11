@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using Dto = BookManager.DtoModels;
 using Domain = DomainModels;
 using BookManager.CQRS.Commands.UseCases;
-using BookManager.DtoModels;
-using DomainModels;
 
 namespace BookManager.Controllers
 {
@@ -30,12 +28,12 @@ namespace BookManager.Controllers
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         [HttpGet]
-        [Produces(typeof(List<Dto.Book>))]
+        [Produces(typeof(Dto.PaginatedList<Dto.Book>))]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Get(int? pageIndex = null, int? pageSize = null)
         {
             var data = await _mediator.Send(new GetBooksQuery(pageIndex, pageSize));
-            var response = _mapper.Map<List<Dto.Book>>(data);
+            var response = _mapper.Map<Dto.PaginatedList<Dto.Book>>(data);
             return Ok(response);
         }
 

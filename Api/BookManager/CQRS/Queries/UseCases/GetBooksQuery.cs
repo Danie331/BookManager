@@ -3,7 +3,7 @@ using MediatR;
 
 namespace BookManager.CQRS.Queries.UseCases
 {
-    public record class GetBooksQuery : IRequest<List<Book>>
+    public record class GetBooksQuery : IRequest<PaginatedList<Book>>
     {
         public int? PageIndex { get; private set; }
         public int? PageSize { get; private set; }

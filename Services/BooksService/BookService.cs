@@ -23,16 +23,16 @@ namespace BooksService
         public async Task<PaginatedList<Book>> AllAsync(int? pageIndex = null, int? pageSize = null)
         {
             var data = await _dataService.AllAsync();
+            var count = data.Count;
             if (pageIndex.HasValue && pageSize.HasValue)
             {
-                var count = data.Count;
                 var pagedData = data.Skip((pageIndex.Value - 1) * pageSize.Value).Take(pageSize.Value).ToList();
                 var totalPages = (int)Math.Ceiling(count / (double)pageSize.Value);
 
-                return new PaginatedList<Book>(pagedData, pageIndex.Value, totalPages);
+                return new PaginatedList<Book>(pagedData, pageIndex.Value, pageSize.Value, totalPages, count);
             }
 
-            return new PaginatedList<Book>(data, 1, 1);
+            return new PaginatedList<Book>(data, 1, count, 1, count);
         }
 
         public Task DeleteAsync(Guid id) => _dataService.DeleteAsync(id);

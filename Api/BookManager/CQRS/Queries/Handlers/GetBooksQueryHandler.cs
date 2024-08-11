@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace BookManager.CQRS.Queries.Handlers
 {
-    public class GetBooksQueryHandler : IRequestHandler<GetBooksQuery, List<Book>>
+    public class GetBooksQueryHandler : IRequestHandler<GetBooksQuery, PaginatedList<Book>>
     {
         private readonly IBookService _bookService;
 
@@ -15,12 +15,11 @@ namespace BookManager.CQRS.Queries.Handlers
             _bookService = bookService;
         }
 
-        public async Task<List<Book>> Handle(GetBooksQuery request, CancellationToken cancellationToken)
+        public async Task<PaginatedList<Book>> Handle(GetBooksQuery request, CancellationToken cancellationToken)
         {
             try
             {
-                var data = await _bookService.AllAsync(request.PageIndex, request.PageSize);
-                return data.Items;
+                return await _bookService.AllAsync(request.PageIndex, request.PageSize);
             }
             catch (Exception ex)
             {

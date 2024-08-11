@@ -8,6 +8,7 @@ namespace BookManager.Automapper
         {
             CreateMap<DtoModels.Book, DomainModels.Book>().ReverseMap();
             CreateMap<DtoModels.SearchFilter, DomainModels.SearchFilter>();
+            CreateMap(typeof(DomainModels.PaginatedList<>), typeof(DtoModels.PaginatedList<>));
         }
     }
 }
