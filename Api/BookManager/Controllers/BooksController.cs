@@ -57,16 +57,16 @@ namespace BookManager.Controllers
         }
 
         /// <summary>
-        /// Adds a new book to the collection
+        /// Adds a new book to the data source
         /// </summary>
         /// <param name="book"></param>
         /// <returns></returns>
         /// <response code="200">Book successfully added</response>
         /// <response code="400">One or more validation errors occurred</response>
         [HttpPost]
-        [Consumes(typeof(Dto.Book), "application/json")]
+        [Consumes(typeof(Dto.NewBook), "application/json")]
         [ProducesResponseType(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Post([FromBody] Dto.Book book)
+        public async Task<IActionResult> Post([FromBody] Dto.NewBook book)
         {
             var data = _mapper.Map<Domain.Book>(book);
             await _mediator.Send(new AddBookCommand(data));

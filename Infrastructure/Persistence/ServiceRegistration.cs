@@ -9,7 +9,7 @@ namespace Persistence
     {
         public static void Register(IServiceCollection services)
         {
-            services.AddTransient<IBookDataService, BookDataService>();
+            services.AddTransient<IBookDataService, FlatFileDataService>();
 
             services.AddAutoMapper(new Assembly[] { Assembly.GetAssembly(typeof(EntityMappingProfile)) });
         }

@@ -7,12 +7,12 @@ using Persistence.Entities;
 
 namespace Persistence
 {
-    public class BookDataService : IBookDataService
+    public class FlatFileDataService : IBookDataService
     {
         private readonly IBookDataStoreConfiguration _configService;
         private readonly IMapper _mapper;
 
-        public BookDataService(IMapper mapper, IBookDataStoreConfiguration configService)
+        public FlatFileDataService(IMapper mapper, IBookDataStoreConfiguration configService)
         {
             _mapper = mapper;
             _configService = configService;
