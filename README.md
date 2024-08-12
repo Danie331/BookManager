@@ -6,7 +6,7 @@ Maintain an inventory of books exposed via a RESTful API and swagger UI
 - Ensure that the API project is set as the startup project
 - If the default launch profile gives a certificate error, switch to iis-express
 
-### React web app
+### Web app
 - In development and not ready for testing as yet
 
 ### Data source
