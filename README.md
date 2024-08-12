@@ -6,6 +6,9 @@ Maintain an inventory of books exposed via a RESTful API and swagger UI
 - Ensure that the API project is set as the startup project
 - If the default launch profile gives a certificate error, switch to iis-express
 
+### React web app
+- In development and not ready for testing as yet
+
 ### Data source
 - Flat file located in the web root by default
 - This repo currently ships with a sample books.json file containing random test data. To start from a clean slate, please delete this file and it will be automatically recreated.
